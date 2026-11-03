@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#faedf2">
+<title>LOVE FROM.9 V1.1｜七日夏日約定</title>
+<style>
+:root{--ink:#594653;--muted:#9a8290;--pink:#d77fa2;--deep:#a84f79;--pale:#faedf2;--line:#f0dce5;--lav:#eee8f7;--white:#fffdfd;--mint:#e5f1ec}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(135deg,#fff9f7,#f7eaf1 55%,#efebf8);font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif;color:var(--ink)}
+button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid #c47b9b;outline-offset:3px}
+.wrap{max-width:1080px;margin:auto;padding:18px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:10px}.logo{font-weight:900;letter-spacing:2px;color:var(--deep)}.pill{font-size:11px;background:#f4dfe9;color:var(--deep);padding:6px 10px;border-radius:99px}
+.panel{background:#ffffffdf;border:1px solid white;border-radius:24px;padding:clamp(17px,4vw,32px);box-shadow:0 14px 42px #a66c8512}
+.hidden{display:none!important}.hero{text-align:center}.hero-art{height:230px;border-radius:19px;margin-bottom:20px;display:grid;place-items:center;background:radial-gradient(circle at 20% 25%,#fff 0 5px,transparent 6px),radial-gradient(circle at 78% 28%,#fff9 0 8px,transparent 9px),linear-gradient(120deg,#f4c8d9,#e8def4 52%,#f9e4d8);font-size:clamp(35px,8vw,70px);color:#fff;letter-spacing:10px}
+h1{margin:0;color:var(--deep);font-size:clamp(35px,7vw,58px);letter-spacing:3px}h2{color:var(--deep);margin:0 0 12px}h3{margin:0 0 7px;color:var(--deep)}.sub{color:#a66b85;letter-spacing:2px;margin:5px 0 16px}.lead{max-width:650px;margin:0 auto 22px;line-height:1.9}.muted,.small{color:var(--muted);font-size:13px;line-height:1.7}
+.btn{border:0;border-radius:13px;padding:12px 18px;background:var(--deep);color:white;font-weight:750;box-shadow:0 5px 14px #a84f7924}.btn.alt{background:#f4e2eb;color:var(--deep);box-shadow:none}.btn.line{background:white;color:var(--deep);border:1px solid var(--line);box-shadow:none}.btn:disabled{opacity:.45;cursor:not-allowed}.actions{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px}.char{border:1px solid var(--line);background:white;border-radius:17px;padding:12px;text-align:left;color:var(--ink)}.char:hover,.choice:hover{border-color:var(--pink);transform:translateY(-2px)}.avatar{height:116px;border-radius:12px;display:grid;place-items:center;font-size:40px;color:white;background:linear-gradient(140deg,#edb2c9,#b8a7d7);margin-bottom:9px}.char:nth-child(2) .avatar{background:linear-gradient(140deg,#f3c7a8,#e59bb6)}.char:nth-child(3) .avatar{background:linear-gradient(140deg,#e5a6bb,#a7c5d8)}.char:nth-child(4) .avatar{background:linear-gradient(140deg,#c4b3e2,#edc1d2)}.char:nth-child(5) .avatar{background:linear-gradient(140deg,#a7cfc3,#d8b5d0)}.char strong{display:block}.char span{font-size:12px;color:var(--muted);line-height:1.6}
+.gamehead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}.scene{min-height:175px;border-radius:17px;padding:23px;display:flex;flex-direction:column;justify-content:end;background:linear-gradient(180deg,#e8dff3,#f7dce7 60%,#f3e5da)}.scene .where{font-size:12px;color:#a16d86;letter-spacing:1px}.scene .title{font-size:24px;font-weight:850;color:#79586a;margin-top:6px}.story{font-size:16px;line-height:2;white-space:pre-line;margin:19px 0}.speaker{font-weight:850;color:var(--deep);margin-bottom:9px}.choices{display:grid;gap:9px}.choice{border:1px solid var(--line);background:white;border-radius:13px;padding:13px 15px;text-align:left;color:var(--ink);transition:.15s;line-height:1.6}
+.metergrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:9px;margin:17px 0}.meter{padding:10px 12px;background:#fff;border:1px solid var(--line);border-radius:13px}.meterhead{display:flex;justify-content:space-between;font-size:12px;margin-bottom:7px}.bar{height:7px;border-radius:99px;background:#f2e7ed;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#e9a1bc,#bd9bd5);border-radius:99px}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.tab{border:1px solid var(--line);background:#fff;color:var(--deep);padding:8px 12px;border-radius:99px;font-size:13px}.tab.active{background:var(--deep);color:#fff}.notice{background:#f8f0f4;padding:12px;border-radius:12px;color:#8e7180;font-size:12px;line-height:1.7;margin-top:15px}.footer{text-align:center;font-size:11px;color:#aa91a0;margin:18px 0 3px}.eventcard{background:#fff;border:1px solid var(--line);padding:14px;border-radius:15px}.tag{font-size:11px;color:#9b6d84;background:#f8e9f0;border-radius:99px;padding:4px 8px;display:inline-block;margin-bottom:7px}
+@media(max-width:600px){.wrap{padding:11px}.hero-art{height:165px}.story{font-size:15px}.scene .title{font-size:21px}.gamehead{align-items:flex-start}}
+</style>
+</head>
+<body><main class="wrap">
+<header class="top"><div class="logo">♡ LOVE FROM.9</div><div class="pill">FAN-MADE VISUAL NOVEL · V1.1</div></header>
+
+<section id="home" class="panel hero">
+ <div class="hero-art">✿ ✧ ♡ ✧ ✿</div><h1>LOVE FROM.9</h1><div class="sub">九個人的夏日約定</div>
+ <p class="lead">七天的夏日假期，一場意外的相遇。<br>在散步、甜點、音樂與書頁之間，慢慢累積屬於你們的友誼與回憶。</p>
+ <div class="actions"><button class="btn" onclick="newGame()">開始新故事</button><button class="btn alt" onclick="loadGame()">讀取存檔</button><button class="btn line" onclick="openGallery('home')">角色圖鑑</button><button class="btn line" onclick="openAlbum('home')">回憶相簿</button></div>
+ <div class="notice">非官方粉絲創作。角色互動、對話與事件均為虛構，不代表成員真實生活或私人關係。此版本使用原創漸層圖形作為立繪佔位，沒有使用未授權照片。</div>
+</section>
+
+<section id="select" class="panel hidden"><h2>選擇今天的同行夥伴</h2><p class="small">先選擇一位朋友展開七天故事。完成後可重新開始其他角色路線。</p><div class="grid" id="selectGrid"></div><div class="actions" style="margin-top:18px"><button class="btn line" onclick="show('home')">返回</button></div></section>
+
+<section id="game" class="panel hidden">
+ <div class="gamehead"><div><div class="small" id="chapter">序章</div><strong id="dayLabel">DAY 01 · 週一</strong></div><div class="actions"><button class="btn line" onclick="saveGame()">存檔</button><button class="btn alt" onclick="openAlbum('game')">相簿</button></div></div>
+ <div class="scene"><div class="where" id="place">午後 · 街角</div><div class="title" id="sceneTitle">夏日的第一天</div></div>
+ <div class="story" id="storyText"></div><div class="speaker" id="speaker"></div><div class="choices" id="choices"></div>
+ <div class="metergrid" id="meters"></div>
+ <div class="actions"><button class="btn alt" onclick="openGallery('game')">角色圖鑑</button><button class="btn line" onclick="show('home')">回主選單</button></div>
+</section>
+
+<section id="gallery" class="panel hidden"><h2>角色圖鑑</h2><p class="small">每位角色都有獨立故事主題。圖鑑會顯示目前累積的親近度。</p><div class="grid" id="galleryGrid"></div><div class="actions" style="margin-top:18px"><button class="btn line" onclick="returnFromOverlay()">返回</button></div></section>
+<section id="album" class="panel hidden"><h2>夏日回憶相簿</h2><p class="small">完成指定章節即可收藏回憶卡。這些是遊戲內的原創文字紀念卡。</p><div class="grid" id="albumGrid"></div><div class="actions" style="margin-top:18px"><button class="btn line" onclick="returnFromOverlay()">返回</button></div></section>
+<section id="ending" class="panel hidden hero"><div class="hero-art">♡ ✿ ♡</div><div class="pill">STORY COMPLETE</div><h1 id="endingTitle">夏日約定</h1><p class="lead" id="endingText"></p><div class="eventcard"><h3 id="endingRank">友誼結局</h3><div id="endingDetail" class="small"></div></div><div class="actions" style="margin-top:18px"><button class="btn" onclick="newGame()">體驗另一條路線</button><button class="btn alt" onclick="openAlbum('ending')">查看回憶相簿</button><button class="btn line" onclick="show('home')">回主選單</button></div></section>
+<div class="footer">LOVE FROM.9 · SEVEN DAYS, LITTLE MEMORIES · V1.1</div>
+</main>
+<script>
+const chars=[
+{id:"hayoung",name:"宋河英",en:"HAYOUNG",desc:"溫柔活力型 · 日常陪伴",sym:"☀",theme:"午後散步"},
+{id:"jiwon",name:"朴智媛",en:"JIWON",desc:"陽光開朗型 · 歡笑與默契",sym:"♫",theme:"音樂與甜點"},
+{id:"chaeyoung",name:"李彩煐",en:"CHAEYOUNG",desc:"活潑調皮型 · 歡樂冒險",sym:"✦",theme:"市集小冒險"},
+{id:"nagyung",name:"李娜炅",en:"NAGYUNG",desc:"俏皮可愛型 · 日常攝影",sym:"♡",theme:"照片與回憶"},
+{id:"jiheon",name:"白知憲",en:"JIHEON",desc:"清新知性型 · 共同成長",sym:"✿",theme:"書店與閱讀"}
+];
+// 每條路線七日、每日一個主要互動；所有台詞均為虛構遊戲文本。
+const story={
+hayoung:[
+["街角咖啡廳","偶然的重逢","週一午後，你在咖啡廳外遇見河英。她拿著一杯冰飲，笑著向你打招呼。","河英：嗨！今天也來這附近嗎？","「對呀，想找個地方休息。」|「這附近有什麼推薦的嗎？」|「今天的天氣很適合散步。」",[2,2,3]],
+["河邊步道","慢慢走的午後","你們沿著河邊散步，聊起最近喜歡的音樂。河英分享了一首讓她心情變好的歌。","河英：這首歌很適合邊走路邊聽。","「下次換我分享歌單。」|「我會回去聽聽看！」|「這條步道真的很舒服。」",[3,2,2]],
+["小小運動場","一起動一動","附近有一場輕鬆的趣味活動。河英問你要不要一起參加。","河英：不用太認真，玩得開心最重要！","「好啊，今天就放鬆玩吧。」|「我先看看規則，等等一起參加。」|「結束後去買飲料吧！」",[3,2,3]],
+["水果店","夏日補給站","天氣有點熱，你們停在水果店挑選冰涼的水果。","河英：這個季節的水果看起來都好好吃。","「選一個我們都沒吃過的吧。」|「我想試試這個口味。」|「一起分享不同種類最棒。」",[3,2,3]],
+["公園長椅","不趕時間的聊天","你們坐在樹蔭下聊起各自最近的小目標。河英認真聽你分享。","河英：慢慢來也沒關係，找到自己的步調就好。","「謝謝妳願意聽我說。」|「妳最近也有想完成的事嗎？」|「我們都替彼此加油吧。」",[3,3,2]],
+["夕陽步道","今天的風景","夕陽把天空染成柔和的橘色。河英提議拍一張風景照，留住這個傍晚。","河英：這個時間的天空真的很漂亮。","「我來拍照，幫今天留念。」|「下次也找個地方看夕陽吧。」|「這張照片可以傳給我嗎？」",[2,3,3]],
+["熟悉的街角","下次再見","七天的假期接近尾聲。你們回到第一次見面的街角，聊起這一週的回憶。","河英：這幾天過得很充實呢。之後有空再一起散步吧！","「好啊，我很期待下一次。」|「謝謝妳帶我發現這些地方。」|「下次換我安排路線！」",[3,3,3]]
+],
+jiwon:[
+["甜點店門口","好吃的第一印象","你在甜點店外遇見智媛。她正研究櫥窗裡的新口味，看到你便熱情地揮手。","智媛：你來得正好！要不要一起看看今天有什麼甜點？","「今天就聽妳推薦！」|「我想挑一個沒吃過的口味。」|「先拍照，這個櫥窗好可愛。」",[3,2,2]],
+["唱片行","旋律的話題","你們在唱片行聽了幾段試聽。智媛分享自己最近常聽的歌曲。","智媛：音樂很神奇，常常會讓人想起某個時刻。","「妳推薦的歌我會收藏。」|「我也有一首想分享給妳。」|「我們做一份共同歌單吧。」",[2,3,3]],
+["街頭小舞台","即興的節奏","廣場上有小型表演活動。你們停下腳步，跟著音樂享受現場氣氛。","智媛：現場聽真的很有感染力！","「下次也一起來看表演。」|「這首歌的節奏很棒。」|「我喜歡大家一起享受音樂的感覺。」",[3,2,3]],
+["咖啡廳","交換推薦清單","你們各自寫下喜歡的飲料和甜點，打算下次互相挑戰對方的推薦。","智媛：這樣下次見面就有新目標了！","「我會認真研究妳的清單。」|「那就約定下次交換心得。」|「再加一項：找一家新店。」",[2,3,3]],
+["河岸夜景","晚風與歌聲","夜色漸深，你們坐在河岸邊聽著遠處傳來的音樂。","智媛：今天的氣氛很適合聽慢歌呢。","「這首歌很適合今晚。」|「謝謝妳分享這些音樂。」|「下次也帶我來聽現場吧。」",[2,3,3]],
+["小型展演","把喜歡分享出去","你們參加一場小型音樂展演。結束後，智媛問你最喜歡哪一段。","智媛：我最喜歡最後大家一起合唱的部分！","「我也是，那一刻很感動。」|「我喜歡剛開始的純音樂段落。」|「每一段都有自己的魅力。」",[3,2,3]],
+["甜點店","下一份歌單","假期最後一天，你們回到最初的甜點店，交換這週整理的歌單。","智媛：下次見面，再一起發現新的好歌吧！","「說好了，我會準備新歌。」|「這週真的留下很多好回憶。」|「下次也來挑戰新的甜點！」",[3,3,2]]
+],
+chaeyoung:[
+["週末市集","冒險開始","彩煐在市集入口發現一個有趣的遊戲攤位，立刻邀請你一起試試。","彩煐：來比賽吧！輸的人負責挑飲料。","「好啊，我可不會放水！」|「先研究一下規則比較公平。」|「贏的人可以選今天的行程。」",[3,2,3]],
+["手作攤位","親手做的紀念","你們在手作攤位挑選材料，打算做一個小小的紀念品。","彩煐：自己做的東西感覺特別有紀念價值。","「我們做一組搭配的吧。」|「妳想做什麼造型？」|「完成後拍張照片留念。」",[3,3,2]],
+["遊樂園","歡樂的一天","你們來到遊樂園，從旋轉設施到遊戲攤位，每一站都充滿笑聲。","彩煐：下一站要去哪裡？今天交給你決定！","「先去玩那個最有趣的設施。」|「我們先吃點東西補充體力。」|「來抽籤決定下一站！」",[3,2,3]],
+["街機遊戲店","再玩一局","你們在遊戲店挑戰合作遊戲。第一次沒有成功，彩煐卻提議再試一次。","彩煐：再一局！這次一定可以配合得更好。","「好，我們調整一下策略。」|「失敗也很好玩啊。」|「這次換我配合妳的節奏。」",[3,2,3]],
+["冰淇淋店","獎勵時間","忙了一整天，你們坐下來享用冰淇淋，分享今天最有趣的瞬間。","彩煐：今天最好笑的果然是剛剛那一幕！","「我已經把它列入本週回憶了。」|「下次還要挑戰更難的遊戲。」|「今天的冰淇淋也很好吃。」",[3,3,2]],
+["海邊步道","收集小小風景","你們沿著海邊步道散步，收集沿途看到的有趣景色。","彩煐：原來放慢速度，也能發現很多東西。","「下次來探索另一條路線。」|「我喜歡今天這種不趕時間的感覺。」|「一起拍張海邊合照留念吧。」",[3,2,3]],
+["市集入口","冒險的下一頁","七天的行程結束了。你們回到市集入口，約好下次再找新的地方探索。","彩煐：下次的冒險也要很有趣才行！","「我會準備一份新清單。」|「下次換妳選目的地。」|「這週真的很值得紀念。」",[3,3,3]]
+],
+nagyung:[
+["窗邊咖啡廳","照片裡的午後","娜炅坐在窗邊整理照片。她看到你，便請你幫忙選出最喜歡的一張。","娜炅：你覺得哪張最有今天的感覺？","「光線柔和的那張很漂亮。」|「每張照片都有不同故事。」|「妳抓到的角度很有趣。」",[3,2,3]],
+["花店街道","尋找顏色","你們沿著花店街道散步，試著找出今天最喜歡的三種顏色。","娜炅：原來平常路過的地方，也有這麼多細節。","「我最喜歡這個淡粉色。」|「我們各選一種，再拍成拼貼。」|「妳觀察得很仔細。」",[2,3,3]],
+["小型藝廊","安靜的驚喜","你們走進一間小藝廊，慢慢欣賞牆上的攝影作品。","娜炅：有些照片不用說明，也能讓人感受到情緒。","「我喜歡留白比較多的作品。」|「這張讓我想到剛才的街景。」|「看完之後也想試著拍照。」",[2,3,3]],
+["老街","把日常收藏起來","娜炅提議用照片記錄老街的小店與窗景。你們各自拍下三張喜歡的畫面。","娜炅：照片好像能把當時的心情一起保存下來。","「我們交換今天最喜歡的一張吧。」|「下次再來拍不同季節。」|「我想把這些做成小相簿。」",[3,3,3]],
+["甜點咖啡廳","相簿的空白頁","你們挑了一家安靜的咖啡廳，把這幾天的照片排成小小的回憶頁。","娜炅：這頁還空著，留給最後一天好了。","「最後一天一定要拍一張特別的。」|「我喜歡這種慢慢整理回憶的感覺。」|「可以加上今天的日期。」",[3,2,3]],
+["黃昏街道","最喜歡的光線","夕陽落在街道上，娜炅停下腳步，拍下今天最後一張風景照。","娜炅：這個光線剛剛好，像替這週畫上柔和的句點。","「真的很漂亮，謝謝妳帶我來。」|「下次再找一個新的拍攝地點。」|「這張一定要放進相簿。」",[2,3,3]],
+["窗邊咖啡廳","留給下次的照片","你們回到最初見面的咖啡廳，翻看這週累積的照片。","娜炅：下次見面，再一起拍新的日常吧。","「好啊，期待下一頁。」|「這本相簿會是很棒的紀念。」|「下次讓我來安排拍攝路線。」",[3,3,3]]
+],
+jiheon:[
+["獨立書店","書頁間的相遇","你在書店遇見知憲。她正在挑選一本書，看到你後便聊起最近讀到的內容。","知憲：你平常也會來書店嗎？這裡很適合放慢步調。","「偶爾會，喜歡這裡安靜的氣氛。」|「可以推薦一本入門的書嗎？」|「我喜歡意外發現新作品。」",[2,3,3]],
+["圖書館窗邊","交換閱讀清單","你們各自寫下最近想讀的書，並交換推薦理由。","知憲：原來同一本書，也能有不同的理解。","「我想聽聽妳讀完的想法。」|「我們可以交換閱讀清單。」|「這本也加入我的待讀清單。」",[3,3,2]],
+["文具店","小小計畫本","你們挑選喜歡的筆記本，打算記錄這個夏天想完成的小目標。","知憲：把想做的事寫下來，好像就更容易開始了。","「我想先從每天讀幾頁開始。」|「我們各自寫一個夏日目標吧。」|「這本的封面很適合夏天。」",[3,3,2]],
+["植物園","自然觀察日","你們在植物園慢慢散步，觀察不同植物的形狀與顏色。","知憲：仔細看才發現，每種植物都有自己的樣子。","「我喜歡這種慢慢觀察的活動。」|「我們找找看最特別的葉子。」|「下次也可以來不同的季節。」",[3,2,3]],
+["茶屋","讀書休息時間","走了一段路後，你們在茶屋休息，分享最近學到的一件新事情。","知憲：每天學到一點新東西，就很值得了。","「今天我也學到不少。」|「妳最近對什麼主題感興趣？」|「我們交換一個有趣的小知識吧。」",[2,3,3]],
+["校園小徑","把目標寫下來","你們在校園小徑旁坐下，把這週想完成的事情整理成清單。","知憲：不用一次做到全部，持續一點點就很好。","「我會一步一步完成。」|「之後也互相分享進度吧。」|「謝謝妳提醒我別太急。」",[3,3,3]],
+["獨立書店","故事還沒結束","七天的假期接近尾聲。你們回到書店，把各自的閱讀清單交換回來。","知憲：下次見面，告訴我你最喜歡哪一段吧。","「我會好好讀完，再來交換心得。」|「這週的回憶也值得寫進筆記。」|「下次再一起找新書。」",[3,3,3]]
+]};
+let state,overlayReturn="home";
+const blank=()=>({route:"",day:0,aff:{hayoung:0,jiwon:0,chaeyoung:0,nagyung:0,jiheon:0},memories:[],complete:false,ending:""});
+function show(id){["home","select","game","gallery","album","ending"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id))}
+function newGame(){state=blank();renderSelect();show("select")}
+function renderSelect(){document.getElementById("selectGrid").innerHTML=chars.map(c=>`<button class="char" onclick="startRoute('${c.id}')"><div class="avatar">${c.sym}</div><strong>${c.name}</strong><span>${c.en}<br>${c.desc}<br>主題：${c.theme}</span></button>`).join("")}
+function startRoute(id){state.route=id;state.day=0;state.complete=false;renderScene();show("game");saveSilent()}
+function currentChar(){return chars.find(c=>c.id===state.route)}
+function renderScene(){
+ if(state.day>=7){finishRoute();return}
+ const c=currentChar(),s=story[state.route][state.day],d=state.day+1;
+ document.getElementById("chapter").textContent=d===1?"序章 · 意外相遇":`第 ${d-1} 章 · 夏日的日常`;
+ document.getElementById("dayLabel").textContent=`DAY 0${d} · ${["週一","週二","週三","週四","週五","週六","週日"][state.day]}`;
+ document.getElementById("place").textContent=s[0];document.getElementById("sceneTitle").textContent=s[1];
+ document.getElementById("storyText").textContent=s[2];document.getElementById("speaker").textContent=s[3];
+ document.getElementById("choices").innerHTML=s[4].split("|").map((v,i)=>`<button class="choice" onclick="choose(${i})">${["A","B","C"][i]}．${v}</button>`).join("");
+ renderMeters();
+}
+function choose(i){
+ const s=story[state.route][state.day],points=s[5][i],id=state.route;
+ state.aff[id]=Math.min(100,state.aff[id]+points);
+ const memory=`DAY 0${state.day+1}｜${s[1]}｜${s[2].slice(0,45)}…`;
+ if(!state.memories.includes(memory))state.memories.push(memory);
+ state.day++;saveSilent();renderScene();
+}
+function renderMeters(){document.getElementById("meters").innerHTML=chars.map(c=>`<div class="meter"><div class="meterhead"><b>${c.name}</b><span>${state.aff[c.id]}/100</span></div><div class="bar"><div class="fill" style="width:${state.aff[c.id]}%"></div></div></div>`).join("")}
+function finishRoute(){
+ state.complete=true;const c=currentChar(),v=state.aff[state.route];
+ let rank=v>=19?"完美友誼結局":v>=14?"特別羈絆結局":"夏日朋友結局";
+ let title=v>=19?"留在相簿裡的夏天":v>=14?"下一次的約定":"美好的七日回憶";
+ state.ending=rank;
+ document.getElementById("endingTitle").textContent=title;
+ document.getElementById("endingText").textContent=`七天的假期來到了最後一天。你和${c.name}回顧這段時間走過的地方，也把一路上的小小發現收藏起來。假期雖然結束，但這份友誼還會繼續。`;
+ document.getElementById("endingRank").textContent=rank;
+ document.getElementById("endingDetail").textContent=`${c.name}｜親近度 ${v}/21｜完成 7/7 天故事。${v>=19?"你們留下了許多值得珍藏的共同回憶。":v>=14?"你們建立了穩定而愉快的友誼。":"這是一次溫暖的初識，未來還有更多機會相聚。"}`;
+ saveSilent();show("ending");
+}
+function openGallery(from){overlayReturn=from;document.getElementById("galleryGrid").innerHTML=chars.map(c=>`<div class="char"><div class="avatar">${c.sym}</div><strong>${c.name}</strong><span>${c.en}<br>${c.desc}<br>親近度：${state?.aff?.[c.id]||0}/100</span></div>`).join("");show("gallery")}
+function openAlbum(from){overlayReturn=from;const mem=state?.memories||[];document.getElementById("albumGrid").innerHTML=mem.length?mem.map((m,i)=>`<div class="eventcard"><span class="tag">MEMORY ${String(i+1).padStart(2,"0")}</span><div>${m}</div></div>`).join(""):`<div class="eventcard"><h3>相簿還是空的</h3><p class="small">開始故事並完成每日互動，就能收藏夏日回憶。</p></div>`;show("album")}
+function returnFromOverlay(){show(overlayReturn)}
+function saveSilent(){try{localStorage.setItem("loveFrom9V11",JSON.stringify(state))}catch(e){}}
+function saveGame(){saveSilent();alert("目前進度已儲存。")}
+function loadGame(){try{const raw=localStorage.getItem("loveFrom9V11");if(!raw){alert("尚未找到 V1.1 存檔，請開始新故事。");return}state=JSON.parse(raw);if(!state.route){renderSelect();show("select")}else if(state.complete){finishRoute()}else{renderScene();show("game")}}catch(e){alert("存檔讀取失敗，請重新開始。")}}
+state=blank();renderSelect();
+</script></body></html>
